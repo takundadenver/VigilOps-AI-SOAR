@@ -1,0 +1,13 @@
+[DOCUMENT: SOP_002_Data_Privacy]
+[CLASSIFICATION: CONFIDENTIAL]
+
+VIGILOPS CLOUD DATA PRIVACY PROTOCOLS:
+
+INFRASTRUCTURE:
+The Customer PII Database is hosted on AWS RDS. Perimeter defense is managed by AWS WAF (Web Application Firewall).
+
+DATA EXFILTRATION RESPONSE RULES:
+
+Rule X: If an AI Data Extraction or PII Leakage attack (e.g., attempts to dump "email addresses", "social security numbers", or "credit card data") is detected, the SOC must immediately update the AWS WAF IPSet to block the attacker's IP address.
+
+Rule Y: Generate an alert for the CloudSec team, but DO NOT sever the database connection unless 50+ records have already been exfiltrated.

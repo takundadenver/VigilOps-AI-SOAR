@@ -1,0 +1,17 @@
+[DOCUMENT: SOP_001_Network_Architecture]
+[CLASSIFICATION: INTERNAL STRICT]
+
+VIGILOPS ENTERPRISE NETWORK TOPOLOGY & RESPONSE PROTOCOLS:
+
+FIREWALL SYSTEMS:
+The primary enterprise firewall is a Palo Alto Next-Generation Firewall (NGFW) located at edge IP 10.0.0.1.
+
+CRITICAL ASSETS:
+The Generative AI Application API is hosted on a hardened Ubuntu 22.04 server at internal IP 192.168.50.10.
+
+INCIDENT RESPONSE RULES:
+
+Rule A: If a Prompt Injection attack (e.g., "SYSTEM OVERRIDE", or attempting to extract the "SECRET_API_KEY") is detected against the AI API, rate-limit the attacking IP to 1 request per minute via the Palo Alto API.
+
+Rule C: NEVER reboot the AI API server during an active attack; contain the network port instead.
+
