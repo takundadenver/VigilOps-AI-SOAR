@@ -1,0 +1,6 @@
+[GLOBAL FRAMEWORK: OWASP Top 10 for LLMs]
+LLM01: Prompt Injection - Attackers manipulate LLM inputs to bypass filters.
+Remediation: Sanitize inputs, enforce strict system prompts, and use WAF rate-limiting.
+
+LLM06: Sensitive Information Disclosure - LLMs inadvertently reveal PII or proprietary data.
+Remediation: Implement strict data masking and monitor DB access logs via SIEM.
