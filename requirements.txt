@@ -1,0 +1,59 @@
+# VigilOps V4.0 — Python Dependencies
+# Install with: pip install -r requirements.txt
+#
+# Tested on Python 3.13 (Windows 11)
+# MCP servers on Kali/Ubuntu require: pip install -r requirements.txt --break-system-packages
+
+# ── CORE LLM / AI ──────────────────────────────────────────────────
+openai>=1.30.0              # DeepSeek API (OpenAI-compatible) + Codex remediation
+
+# ── MCP PROTOCOL ───────────────────────────────────────────────────
+mcp>=1.24.0                 # Model Context Protocol — SSE client + server
+uvicorn>=0.31.0             # ASGI server for all MCP SSE endpoints
+
+# ── VECTOR DATABASE (RAG) ──────────────────────────────────────────
+chromadb>=0.5.0             # Dual-segment RAG brain (client_intel + global_frameworks)
+
+# ── HTTP / NETWORKING ──────────────────────────────────────────────
+requests>=2.31.0            # Threat intel feeds, LLMGoat API, Wazuh REST
+httpx>=0.27.0               # Async HTTP for MCP transport
+aiohttp>=3.9.0              # Async HTTP client for concurrent MCP calls
+
+# ── THREAT INTELLIGENCE ────────────────────────────────────────────
+shodan>=1.31.0              # Shodan MCP server — host exposure intel
+
+# ── PACKET CAPTURE / TELEMETRY ─────────────────────────────────────
+scapy>=2.5.0                # PCAP capture during HoneyBadger sieges
+
+# ── PDF INGESTION (option 7 — PDF Ripper) ─────────────────────────
+PyPDF2>=3.0.0               # PDF text extraction for RAG ingestion
+pdfminer.six>=20221105      # Alternative PDF parser for complex documents
+
+# ── DOCUMENT GENERATION ────────────────────────────────────────────
+python-docx>=1.1.0          # Resume and report generation
+
+# ── ASYNC / CONCURRENCY ────────────────────────────────────────────
+anyio>=4.5.0                # Async runtime (required by MCP)
+asyncio-mqtt>=0.16.0        # Optional: MQTT for future sensor integration
+
+# ── UTILITIES ──────────────────────────────────────────────────────
+python-dotenv>=1.0.0        # Environment variable management
+rich>=13.0.0                # Terminal formatting (optional but recommended)
+colorama>=0.4.6             # Windows terminal colour support
+
+# ── WAZUH MCP SERVER (Ubuntu VM only) ─────────────────────────────
+# pip install opensearch-py>=2.4.0   # Wazuh Indexer queries
+# pip install paramiko>=3.4.0        # SSH for adversary simulation state push
+
+# ── NOTES ──────────────────────────────────────────────────────────
+# On Kali Linux 6.18 (kali_tools_mcp.py):
+#   pip install mcp>=1.24.0 uvicorn --break-system-packages
+#
+# On Ubuntu (wazuh_mcp_server.py and other blue team MCPs):
+#   pip install mcp uvicorn requests --break-system-packages
+#
+# API keys required (set in honeybadger.py and agentic_orchestrator.py):
+#   DEEPSEEK_API_KEY  — https://platform.deepseek.com
+#   VT_API_KEY        — https://virustotal.com/gui/my-apikey
+#   SHODAN_API_KEY    — https://account.shodan.io
+#   VULNERS_API_KEY   — https://vulners.com/userinfo (optional)
