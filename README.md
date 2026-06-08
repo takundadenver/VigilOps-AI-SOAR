@@ -8,7 +8,7 @@
 [![Wazuh](https://img.shields.io/badge/SIEM-Wazuh_4.7.5-red)](https://wazuh.com)
 [![MCP](https://img.shields.io/badge/Protocol-MCP_SSE-green)](https://modelcontextprotocol.io)
 [![OWASP](https://img.shields.io/badge/OWASP-LLM_Top_10-orange)](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-[![License](https://img.shields.io/badge/License-Proprietary-lightgrey)](./LICENSE)
+[![License](https://img.shields.io/badge/License-Apache_2.0-blue)](./LICENSE)
 
 ---
 
@@ -316,4 +316,5 @@ The Adversary Simulation Module uses public threat intelligence feeds (Feodo Tra
 ## Author
 
 **Denver Zimunya** — Security Engineer & AI Systems Architect  
+Licensed under the Apache License 2.0. See LICENSE for details.
 
